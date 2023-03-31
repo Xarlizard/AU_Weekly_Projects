@@ -1,0 +1,76 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\chark\\Desktop\\Alchemy\\Week4\\au-modify-contract-state\\contracts\\ModifyVariable.sol": {
+      "lastModificationDate": 1680057818173,
+      "contentHash": "3a4ac48fa463aa286d662080d6ae56d5",
+      "sourceName": "contracts/ModifyVariable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "ModifyVariable"
+      ]
+    },
+    "C:\\Users\\chark\\Desktop\\Alchemy\\Week4\\au-modify-contract-state\\contracts\\MyContract.sol": {
+      "lastModificationDate": 1680131167581,
+      "contentHash": "a7d0d13a333a5e2727ea5f78cd14fd16",
+      "sourceName": "contracts/MyContract.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Contract",
+        "MyContract"
+      ]
+    }
+  }
+}
