@@ -1,5 +1,5 @@
 # AU_Weekly_Projects 
-!\[alt text\](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge)
+![alt text](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge)
 Repo for hosting all the projects that I've finished by/thanksTo completing AlchemyUniversity courses
 
 
