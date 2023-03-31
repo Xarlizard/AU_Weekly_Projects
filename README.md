@@ -1,4 +1,4 @@
-# AU_Weekly_Projects ![ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge)
+# AU_Weekly_Projects ![ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge) ![visualstudio](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 Repo for hosting all the projects that I've finished by/thanksTo completing AlchemyUniversity courses
 
