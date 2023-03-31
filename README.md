@@ -3,4 +3,4 @@ Repo for hosting all the projects that I've finished by/thanksTo completing Alch
 
 
 Downloading each project dependencies is needed in order to run / test each project independently. Just download and `cd` into the desired project folder (for example "WeekX_projectY") and run `npm install` to aquire the required dependencies for that project. 
-Keep in mind that some projects also require a `.env` file (not included) containing the API private key(s) needed for running the project and sometimes also an ethereum testnet (Goerli) private key, in those cases it would be specified at the `readme.md` file inside that specific project folder. Each API key can be aquired at https://dashboard.alchemy.com/ by getting a free account.
+Keep in mind that some projects also require a `.env` file (not included) containing the API private key(s) needed for running the project and sometimes also an ethereum testnet (Goerli) wallet private key, in those cases it would be specified at the `readme.md` file inside that specific project folder. Each API key can be aquired at https://dashboard.alchemy.com/ by getting a free account.
