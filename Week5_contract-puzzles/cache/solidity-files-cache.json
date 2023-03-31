@@ -1,8 +1,8 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\chark\\Desktop\\Alchemy\\Week5\\contract-puzzles\\contracts\\Contract1.sol": {
-      "lastModificationDate": 1680199204150,
+    "C:\\Users\\chark\\Documents\\GitHub\\AU_Weekly_Projects\\Week5_contract-puzzles\\contracts\\Contract1.sol": {
+      "lastModificationDate": 1680228643200,
       "contentHash": "f310fc210ebb2a5e16c2c2c8212c0367",
       "sourceName": "contracts/Contract1.sol",
       "solcConfig": {
@@ -36,8 +36,8 @@
         "Game1"
       ]
     },
-    "C:\\Users\\chark\\Desktop\\Alchemy\\Week5\\contract-puzzles\\contracts\\Contract2.sol": {
-      "lastModificationDate": 1680199204150,
+    "C:\\Users\\chark\\Documents\\GitHub\\AU_Weekly_Projects\\Week5_contract-puzzles\\contracts\\Contract2.sol": {
+      "lastModificationDate": 1680228643200,
       "contentHash": "ce92a846d9d7a310a40e917f5a14f5d6",
       "sourceName": "contracts/Contract2.sol",
       "solcConfig": {
@@ -71,8 +71,8 @@
         "Game2"
       ]
     },
-    "C:\\Users\\chark\\Desktop\\Alchemy\\Week5\\contract-puzzles\\contracts\\Contract3.sol": {
-      "lastModificationDate": 1680199204151,
+    "C:\\Users\\chark\\Documents\\GitHub\\AU_Weekly_Projects\\Week5_contract-puzzles\\contracts\\Contract3.sol": {
+      "lastModificationDate": 1680228643201,
       "contentHash": "909bbbe39737f2b6b43ca69be2fb7bbc",
       "sourceName": "contracts/Contract3.sol",
       "solcConfig": {
@@ -106,8 +106,8 @@
         "Game3"
       ]
     },
-    "C:\\Users\\chark\\Desktop\\Alchemy\\Week5\\contract-puzzles\\contracts\\Contract4.sol": {
-      "lastModificationDate": 1680199204152,
+    "C:\\Users\\chark\\Documents\\GitHub\\AU_Weekly_Projects\\Week5_contract-puzzles\\contracts\\Contract4.sol": {
+      "lastModificationDate": 1680228643202,
       "contentHash": "513d86f623272fcd742abd07bc7feca8",
       "sourceName": "contracts/Contract4.sol",
       "solcConfig": {
@@ -141,8 +141,8 @@
         "Game4"
       ]
     },
-    "C:\\Users\\chark\\Desktop\\Alchemy\\Week5\\contract-puzzles\\contracts\\Contract5.sol": {
-      "lastModificationDate": 1680199204152,
+    "C:\\Users\\chark\\Documents\\GitHub\\AU_Weekly_Projects\\Week5_contract-puzzles\\contracts\\Contract5.sol": {
+      "lastModificationDate": 1680228643202,
       "contentHash": "20c2c92d1f821c13aa8580c30eaf6ca2",
       "sourceName": "contracts/Contract5.sol",
       "solcConfig": {
