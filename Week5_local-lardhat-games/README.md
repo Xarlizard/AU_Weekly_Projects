@@ -1,4 +1,4 @@
-# Local Hardhat Games
+# Local Hardhat Gamess
 
 Let's work on our solidity skills while deploying against a local hardhat blockchain! Inside this repository you'll find 5 smart contracts labled `Game1` to `Game5`. The goal of each smart contract is to:
 
