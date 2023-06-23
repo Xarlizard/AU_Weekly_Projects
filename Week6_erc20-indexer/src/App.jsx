@@ -17,10 +17,28 @@ function App() {
   const [results, setResults] = useState([]);
   const [hasQueried, setHasQueried] = useState(false);
   const [tokenDataObjects, setTokenDataObjects] = useState([]);
+  const [button1Text, setButton1Text] = useState("Connect wallet");
+  const [button2Text, setButton2Text] = useState("Check ERC-20 Token Balances");
+  const [walletConnected, setWalletConnetcted] = useState(false);
+
+   function connectToWallet(){
+    var account;
+   
+    ethereum.request({method: 'eth_requestAccounts'})
+      .then(accounts => {
+        account = accounts[0];
+        console.log(account);
+        setUserAddress(account);
+        setButton1Text("Connected");
+        setButton2Text("Check  " + account.slice(0, 7) + "....." + account.slice(-7, -1) + " Token Balances");
+        setWalletConnetcted(false);
+      })
+      .catch( error => { setWalletConnetcted(false); setButton1Text("Wallet error. Try again")});
+  }
 
   async function getTokenBalance() {
     const config = {
-      apiKey: '<-- COPY-PASTE YOUR ALCHEMY API KEY HERE -->',
+      apiKey: import.meta.env.VITE_API_KEY, // <-- This variable must be declared inside a .env file
       network: Network.ETH_MAINNET,
     };
 
@@ -67,8 +85,12 @@ function App() {
         <Heading mt={42}>
           Get all the ERC-20 token balances of this address:
         </Heading>
+        <div>
+          <Button onClick={() => {connectToWallet();}}>{button1Text}</Button>
+          <Button onClick={getTokenBalance} bgColor="blue">{button2Text}</Button>
+        </div>
         <Input
-          onChange={(e) => setUserAddress(e.target.value)}
+          onChange={(e) => {setUserAddress(e.target.value); setButton2Text("Check  " + userAddress.slice(0, 7) + "....." + userAddress.slice(-7, -1) + " Token Balances");}}
           color="black"
           w="600px"
           textAlign="center"
@@ -76,9 +98,7 @@ function App() {
           bgColor="white"
           fontSize={24}
         />
-        <Button fontSize={20} onClick={getTokenBalance} mt={36} bgColor="blue">
-          Check ERC-20 Token Balances
-        </Button>
+        
 
         <Heading my={36}>ERC-20 token balances:</Heading>
 
