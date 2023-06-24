@@ -10,7 +10,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Alchemy, Network, Utils } from 'alchemy-sdk';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [userAddress, setUserAddress] = useState('');
@@ -20,8 +20,18 @@ function App() {
   const [button1Text, setButton1Text] = useState("Connect wallet");
   const [button2Text, setButton2Text] = useState("Check ERC-20 Token Balances");
   const [walletConnected, setWalletConnetcted] = useState(false);
+  const [isShown, setIsShown] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-   function connectToWallet(){
+  function loadAnimation() {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }
+
+  //Connect to Wallet button function
+   function connectWallet(){
     var account;
    
     ethereum.request({method: 'eth_requestAccounts'})
@@ -29,14 +39,15 @@ function App() {
         account = accounts[0];
         console.log(account);
         setUserAddress(account);
-        setButton1Text("Connected");
-        setButton2Text("Check  " + account.slice(0, 7) + "....." + account.slice(-7, -1) + " Token Balances");
-        setWalletConnetcted(false);
+        setButton1Text(account.slice(0, 5) + "...." + account.slice(-5, -1));
+        setButton2Text("Check Wallet Token Balances");
+        setWalletConnetcted(true);
       })
       .catch( error => { setWalletConnetcted(false); setButton1Text("Wallet error. Try again")});
   }
 
   async function getTokenBalance() {
+  
     const config = {
       apiKey: import.meta.env.VITE_API_KEY, // <-- This variable must be declared inside a .env file
       network: Network.ETH_MAINNET,
@@ -61,6 +72,8 @@ function App() {
   }
   return (
     <Box w="100vw">
+      {loading && (<div className="loader-container"><div className="spinner"></div></div>)}
+
       <Center>
         <Flex
           alignItems={'center'}
@@ -85,23 +98,40 @@ function App() {
         <Heading mt={42}>
           Get all the ERC-20 token balances of this address:
         </Heading>
+
         <div>
-          <Button onClick={() => {connectToWallet();}}>{button1Text}</Button>
-          <Button onClick={getTokenBalance} bgColor="blue">{button2Text}</Button>
+          { !walletConnected && (
+            <Button className="connectWallet" onClick={() => {connectWallet();}} >Connect to wallet</Button>
+          )}
+          { walletConnected && (
+            <Button className="disconnectWallet" onClick={() => window.location.reload(false)} 
+            onMouseEnter={() => setIsShown(true)}
+            onMouseLeave={() => setIsShown(false)}>
+              {!isShown && (
+                <div>{button1Text}</div>
+              )}
+              {isShown && (
+                <div> - Disconnect - </div>
+              )}
+            </Button>
+          )}
+            <Button onClick={ () => {getTokenBalance(); loadAnimation();}} bgColor="blue">{button2Text}</Button>
         </div>
-        <Input
-          onChange={(e) => {setUserAddress(e.target.value); setButton2Text("Check  " + userAddress.slice(0, 7) + "....." + userAddress.slice(-7, -1) + " Token Balances");}}
-          color="black"
-          w="600px"
-          textAlign="center"
-          p={4}
-          bgColor="white"
-          fontSize={24}
-        />
-        
+
+        { !walletConnected && (
+          <Input
+            onChange={(e) => setUserAddress(e.target.value)}
+            color="black"
+            w="600px"
+            textAlign="center"
+            p={4}
+            bgColor="white"
+            fontSize={24}
+          />
+        )}
 
         <Heading my={36}>ERC-20 token balances:</Heading>
-
+ 
         {hasQueried ? (
           <SimpleGrid w={'90vw'} columns={4} spacing={24}>
             {results.tokenBalances.map((e, i) => {
@@ -130,7 +160,9 @@ function App() {
           </SimpleGrid>
         ) : (
           'Please make a query! This may take a few seconds...'
-        )}
+        )} 
+        
+        
       </Flex>
     </Box>
   );
