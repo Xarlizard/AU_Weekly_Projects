@@ -116,18 +116,18 @@ function App() {
             </Button>
           )}
             <Button onClick={ () => {getTokenBalance(); loadAnimation();}} bgColor="blue">{button2Text}</Button>
+            <p></p>
         </div>
 
         { !walletConnected && (
-          <Input
-            onChange={(e) => setUserAddress(e.target.value)}
-            color="black"
-            w="600px"
-            textAlign="center"
-            p={4}
-            bgColor="white"
-            fontSize={24}
-          />
+          
+            <Input
+              onChange={(e) => setUserAddress(e.target.value)}
+              w="600px"
+              textAlign="center"
+              p={4}
+              fontSize={24}
+            />
         )}
 
         <Heading my={36}>ERC-20 token balances:</Heading>
